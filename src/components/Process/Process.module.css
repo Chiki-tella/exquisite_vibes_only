@@ -1,0 +1,85 @@
+.processSection {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 8rem;
+  padding: 0 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-family: var(--font-heading), sans-serif;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+.numberWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.number {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: var(--font-heading), sans-serif;
+  color: var(--accent);
+  background: var(--bg-color);
+  border: 1px solid var(--accent);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.line {
+  width: 1px;
+  height: 100%;
+  background: var(--border-color);
+  min-height: 80px;
+  flex-grow: 1;
+}
+
+.content {
+  padding-bottom: 4rem;
+  padding-top: 0.5rem;
+}
+
+.stepTitle {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-family: var(--font-heading), sans-serif;
+}
+
+.stepDesc {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1rem;
+  max-width: 500px;
+}
+
+@media (max-width: 768px) {
+  .step {
+    gap: 1.5rem;
+  }
+  .number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
