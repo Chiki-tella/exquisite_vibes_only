@@ -18,7 +18,7 @@ export default function Work() {
 
       <div className={styles.workGrid}>
         <div className={styles.workItem}>
-          <Image src="/work1.png" alt="E-Commerce AI Platform" fill className={styles.workItemImage} />
+          <Image src="/work1.png" alt="E-Commerce AI Platform" fill sizes="(max-width: 768px) 100vw, 50vw" className={styles.workItemImage} />
           <div className={styles.workItemOverlay}>
             <div>
               <div className={styles.workCategory}>WEB APP & AI</div>
@@ -28,7 +28,7 @@ export default function Work() {
         </div>
 
         <div className={styles.workItem}>
-          <Image src="/work2.png" alt="Fitness Tracking App" fill className={styles.workItemImage} />
+          <Image src="/work2.png" alt="Fitness Tracking App" fill sizes="(max-width: 768px) 100vw, 50vw" className={styles.workItemImage} />
           <div className={styles.workItemOverlay}>
             <div>
               <div className={styles.workCategory}>REACT NATIVE</div>
@@ -38,7 +38,7 @@ export default function Work() {
         </div>
 
         <div className={styles.workItem}>
-          <Image src="/work3.png" alt="3D Product Configurator" fill className={styles.workItemImage} />
+          <Image src="/work3.png" alt="3D Product Configurator" fill sizes="(max-width: 768px) 100vw, 50vw" className={styles.workItemImage} />
           <div className={styles.workItemOverlay}>
             <div>
               <div className={styles.workCategory}>THREE.JS</div>
@@ -48,7 +48,7 @@ export default function Work() {
         </div>
 
         <div className={styles.workItem}>
-          <Image src="/work1.png" alt="Fintech Dashboard" fill className={styles.workItemImage} />
+          <Image src="/work1.png" alt="Fintech Dashboard" fill sizes="(max-width: 768px) 100vw, 50vw" className={styles.workItemImage} />
           <div className={styles.workItemOverlay}>
             <div>
               <div className={styles.workCategory}>UI/UX & NEXT.JS</div>

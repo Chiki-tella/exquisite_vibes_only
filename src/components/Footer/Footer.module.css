@@ -101,6 +101,7 @@
   font-weight: 800;
   background: linear-gradient(180deg, rgba(30, 30, 30, 1) 0%, #000000 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
   margin: 0;

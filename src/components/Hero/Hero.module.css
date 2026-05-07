@@ -20,9 +20,16 @@
 
 .heroImage {
   object-fit: cover;
-  filter: grayscale(100%) contrast(1.2);
+  filter: grayscale(100%) brightness(0.6) contrast(1.2);
   opacity: 0.8;
   border-radius: 10px 10px 0 0;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.heroImage:hover {
+  filter: grayscale(0%) brightness(1) contrast(1);
+  opacity: 1;
 }
 
 .heroContent {

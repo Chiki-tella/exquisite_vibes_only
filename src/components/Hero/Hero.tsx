@@ -5,15 +5,16 @@ export default function Hero() {
   return (
     <section className={styles.hero}>
       <div className={`${styles.heroImageWrapper} animate-fade-in`}>
-        <Image 
-          src="/hero.png" 
-          alt="Portrait of Web Designer" 
+        <Image
+          src="/chiki.png"
+          alt="Portrait of Web Designer"
           fill
+          sizes="(max-width: 768px) 100vw, 300px"
           className={styles.heroImage}
           priority
         />
       </div>
-      
+
       <div className={`${styles.heroContent} animate-fade-in delay-1`}>
         <h1 className={styles.heroTitle}>
           Creative Mobile<br />
@@ -35,7 +36,7 @@ export default function Hero() {
 
       <div className={`${styles.logos} animate-fade-in delay-2`}>
         <svg width="80" height="24" viewBox="0 0 100 30" fill="currentColor">
-          <text x="0" y="20" fontFamily="sans-serif" fontSize="20" fontWeight="bold">REACT</text>
+          <text x="0" y="20" fontFamily="satoshi" fontSize="20" fontWeight="bold">REACT</text>
         </svg>
         <svg width="100" height="24" viewBox="0 0 100 30" fill="currentColor">
           <text x="0" y="20" fontFamily="serif" fontSize="18" fontStyle="italic">Next.js</text>
