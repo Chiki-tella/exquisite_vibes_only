@@ -28,22 +28,36 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     e.preventDefault();
     if (!formRef.current) return;
 
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey || templateId === "template_id_here") {
+      console.warn("EmailJS configuration incomplete. Please check your .env.local file.");
+      setStatus("error");
+      return;
+    }
+
     setIsSending(true);
     setStatus("idle");
 
     try {
+      // Initialize with public key
+      emailjs.init(publicKey);
+      
       await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+        serviceId,
+        templateId,
         formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
+        publicKey
       );
+      
       setStatus("success");
       formRef.current.reset();
       setTimeout(() => {
         onClose();
       }, 2000);
-    } catch (error) {
+    } catch (error: any) {
       console.error("EmailJS Error:", error);
       setStatus("error");
     } finally {
