@@ -1,63 +1,148 @@
 .testimonialsSection {
   width: 100%;
-  max-width: 1000px;
-  margin: 0 auto 8rem;
+  max-width: 1200px;
+  margin: 0 auto 10rem;
   padding: 0 2rem;
 }
 
-.title {
-  font-size: 2.5rem;
-  font-family: var(--font-heading), sans-serif;
-  font-style: italic;
-  margin-bottom: 3rem;
+.header {
   text-align: center;
+  margin-bottom: 4rem;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+.preTitle {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-family: var(--font-heading), sans-serif;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.carouselContainer {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carouselWindow {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  padding: 3rem;
-  border-radius: 4px;
+  padding: 4rem;
+  border-radius: 8px;
   position: relative;
+  width: 100%;
+  backdrop-filter: blur(10px);
 }
 
 .quoteIcon {
-  color: var(--border-color);
-  margin-bottom: 1.5rem;
+  color: var(--accent);
+  opacity: 0.2;
+  margin-bottom: 2rem;
 }
 
 .text {
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  line-height: 1.6;
   color: var(--text-primary);
-  margin-bottom: 2rem;
-  font-style: italic;
+  margin-bottom: 3rem;
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 400;
 }
 
 .authorInfo {
   border-top: 1px solid var(--border-color);
-  padding-top: 1.5rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .author {
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
-  color: var(--accent);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 .role {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.controlBtn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.controlBtn:hover {
+  background: var(--text-primary);
+  color: var(--bg-color);
+  border-color: var(--text-primary);
+}
+
+.dots {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeDot {
+  background: var(--accent);
+  transform: scale(1.5);
 }
 
 @media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
+  .card {
+    padding: 2.5rem;
+  }
+  
+  .carouselWindow {
+    min-height: 450px;
+  }
+
+  .text {
+    font-size: 1.1rem;
   }
 }
