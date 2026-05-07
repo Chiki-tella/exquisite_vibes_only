@@ -34,7 +34,7 @@ export default function Services() {
           <h3 className={styles.serviceTitle}>{service.title}</h3>
           <p className={styles.serviceDesc}>{service.desc}</p>
           <Link href={service.link} className={styles.serviceLink}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg suppressHydrationWarning width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <polyline points="12 16 16 12 12 8"></polyline>
               <line x1="8" y1="12" x2="16" y2="12"></line>

@@ -85,18 +85,7 @@
   transform: translateX(5px);
 }
 
-.backgroundText {
-  position: absolute;
-  right: -5%;
-  bottom: -10%;
-  font-size: 20vw;
-  font-family: var(--font-heading), sans-serif;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.02);
-  line-height: 1;
-  pointer-events: none;
-  z-index: 1;
-}
+
 
 @media (max-width: 768px) {
   .ctaSection {

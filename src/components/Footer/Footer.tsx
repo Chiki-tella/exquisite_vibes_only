@@ -41,10 +41,11 @@ export default function Footer() {
           </div>
         </div>
 
+        <div className={styles.copyright}>
+          © {currentYear} Christella. All rights reserved.
+        </div>
+
         <div className={styles.bottomSection}>
-          <div className={styles.copyright}>
-            © {currentYear} Christella. All rights reserved.
-          </div>
           <div className={styles.imprintedLogo}>CHRISTELLA.</div>
         </div>
       </div>

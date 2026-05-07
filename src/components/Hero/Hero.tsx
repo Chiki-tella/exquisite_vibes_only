@@ -6,6 +6,7 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={`${styles.heroImageWrapper} animate-fade-in`}>
         <Image
+          suppressHydrationWarning
           src="/chiki.png"
           alt="Portrait of Web Designer"
           fill

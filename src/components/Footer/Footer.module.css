@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  padding: 8rem 2rem 2rem;
+  padding: 8rem 2rem 15rem;
   background: var(--bg-color);
   border-top: 1px solid var(--border-color);
   position: relative;
@@ -10,13 +10,15 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 5;
 }
 
 .topSection {
   display: grid;
   grid-template-columns: 2fr 1.5fr 1fr;
   gap: 4rem;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
 }
 
 .logo {
@@ -88,23 +90,21 @@
   transform: translateX(5px);
 }
 
-.bottomSection {
-  padding-top: 4rem;
-  border-top: 1px solid var(--border-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
 .copyright {
   font-size: 0.85rem;
   color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.bottomSection {
+  border-top: 1px solid var(--border-color);
+  position: relative;
+  height: 20rem; /* Ensure space for the large logo */
 }
 
 .imprintedLogo {
   position: absolute;
-  bottom: -15%;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   font-size: 20vw;
