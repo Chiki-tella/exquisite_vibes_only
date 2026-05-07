@@ -122,11 +122,11 @@
 }
 
 .iconLink {
-  width: 60px;
-  height: 60px;
+  padding: 0 1.5rem;
+  height: 50px;
   background: rgba(255, 255, 255, 0.05);
   color: #fff;
-  border-radius: 50%;
+  border-radius: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,12 +140,14 @@
   /* Fix for backdrop-filter flickering */
   transform: translateZ(0);
   backface-visibility: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .iconLink:hover {
   background: var(--accent);
   color: #000;
-  transform: scale(1.1) translateZ(0);
+  transform: scale(1.05) translateZ(0);
   border-color: var(--accent);
 }
 
