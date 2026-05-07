@@ -91,7 +91,7 @@
 }
 
 .workName {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-heading), sans-serif;
   font-size: 1.5rem;
 }
 

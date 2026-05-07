@@ -23,7 +23,7 @@
 }
 
 .logo {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-heading), sans-serif;
   font-size: 1.5rem;
   font-style: italic;
   text-transform: lowercase;
@@ -210,7 +210,7 @@
 }
 
 .serviceTitle {
-  font-family: var(--font-outfit), sans-serif;
+  font-family: var(--font-body), sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -338,7 +338,7 @@
 }
 
 .workName {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-heading), sans-serif;
   font-size: 1.5rem;
 }
 

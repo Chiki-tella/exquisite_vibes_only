@@ -42,7 +42,7 @@
 }
 
 .title {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-heading), sans-serif;
   font-size: 2rem;
   font-style: italic;
   margin-bottom: 0.5rem;
@@ -80,7 +80,7 @@
   padding: 1rem;
   border-radius: 4px;
   color: var(--text-primary);
-  font-family: var(--font-outfit), sans-serif;
+  font-family: var(--font-body), sans-serif;
   transition: border-color 0.3s ease, background 0.3s ease;
 }
 
@@ -97,7 +97,7 @@
   padding: 1rem;
   border: none;
   border-radius: 4px;
-  font-family: var(--font-outfit), sans-serif;
+  font-family: var(--font-body), sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
   text-transform: uppercase;

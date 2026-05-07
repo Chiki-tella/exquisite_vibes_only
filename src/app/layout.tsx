@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Outfit } from "next/font/google";
+import { League_Spartan, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({ 
+const leagueSpartan = League_Spartan({ 
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-playfair",
+  variable: "--font-heading",
 });
 
-const outfit = Outfit({ 
+const libreBaskerville = Libre_Baskerville({
+  weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-body",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${playfair.variable} ${outfit.variable}`} suppressHydrationWarning>
+      <body className={`${leagueSpartan.variable} ${libreBaskerville.variable}`} suppressHydrationWarning>
         {children}
       </body>
     </html>
