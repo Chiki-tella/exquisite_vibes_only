@@ -2,7 +2,7 @@
 
 A high-end, typography-centric professional portfolio built with **Next.js 16** and **React 19**. This project showcases a minimalist, premium aesthetic inspired by modern design trends (Agex), featuring smooth animations, interactive components, and a perfectly aligned grid system.
 
-![Portfolio Preview](/public/meeh.jpeg)
+
 
 ## ✨ Features
 
