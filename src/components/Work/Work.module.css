@@ -78,7 +78,7 @@
   opacity: 0.5;
   filter: grayscale(100%) blur(5px);
   transform: scale(1.1);
-  transition: 
+  transition:
     opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
     filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -106,7 +106,7 @@
 
 .links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   opacity: 0;
   transform: translateY(20px) translateZ(0);
   transition: 
@@ -122,8 +122,8 @@
 }
 
 .iconLink {
-  padding: 0 1.5rem;
-  height: 50px;
+  padding: 0 1.25rem;
+  height: 44px;
   background: rgba(255, 255, 255, 0.05);
   color: #fff;
   border-radius: 50px;
@@ -141,6 +141,13 @@
   transform: translateZ(0);
   backface-visibility: hidden;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
+  gap: 0.5rem;
+}
+
+.linkText {
+  font-size: 0.65rem;
+  font-weight: 700;
   letter-spacing: 0.1em;
 }
 
@@ -185,12 +192,10 @@
   left: -100%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(255, 255, 255, 0.03),
-    transparent
-  );
+  background: linear-gradient(to right,
+      transparent,
+      rgba(255, 255, 255, 0.03),
+      transparent);
   transform: skewX(-25deg);
   transition: transform 0.75s ease;
   pointer-events: none;
@@ -206,11 +211,11 @@
     grid-template-columns: 1fr;
     gap: 4rem;
   }
-  
+
   .small {
     width: 100%;
   }
-  
+
   .workItem:hover .projectInfo {
     transform: none;
   }
