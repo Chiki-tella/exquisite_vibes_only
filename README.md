@@ -2,7 +2,7 @@
 
 A high-end, typography-centric professional portfolio built with **Next.js 16** and **React 19**. This project showcases a minimalist, premium aesthetic inspired by modern design trends (Agex), featuring smooth animations, interactive components, and a perfectly aligned grid system.
 
-![Portfolio Preview](/public/hero.png)
+![Portfolio Preview](/public/meeh.jpeg)
 
 ## ✨ Features
 
@@ -61,8 +61,8 @@ A high-end, typography-centric professional portfolio built with **Next.js 16** 
 
 ## 🤝 Contact
 
-Christella — [Portfolio](https://christella.dev) — [LinkedIn](https://linkedin.com/in/christella)
+Christella — [Portfolio](https://munezeroportfoliov3.vercel.app) — [LinkedIn](https://linkedin.com/in/m-i-christella)
 
 ---
 
-Built with ❤️ and a passion for exquisite digital experiences.
+Built with intention and a passion for exquisite digital experiences.
