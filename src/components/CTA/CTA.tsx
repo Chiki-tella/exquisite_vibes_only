@@ -28,7 +28,7 @@ export default function CTA() {
 
           <div className={styles.imageWrapper}>
             <Image
-              src="/chiki.png"
+              src="/meeh.jpeg"
               alt="Portrait"
               width={400}
               height={500}

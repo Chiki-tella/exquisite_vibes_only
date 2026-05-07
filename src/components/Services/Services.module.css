@@ -3,7 +3,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto 8rem;
 }
 
