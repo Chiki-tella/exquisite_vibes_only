@@ -12,14 +12,21 @@
   border: 1px solid var(--border-color);
   padding: 3rem 2rem;
   border-radius: 4px;
-  transition: all 0.4s ease;
-  backdrop-filter: blur(5px);
+  transition: 
+    background 0.4s ease,
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  /* Fix for flickering */
+  transform: translateZ(0);
+  will-change: transform, background;
 }
 
 .serviceCard:hover {
-  border-color: rgba(212, 188, 150, 0.3); /* Accent color with opacity */
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(212, 188, 150, 0.3);
+  transform: translateY(-8px) translateZ(0);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .serviceNumber {

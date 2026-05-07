@@ -44,6 +44,8 @@
   flex-direction: column;
   gap: 1.5rem;
   position: relative;
+  /* Ensure a stable stacking context */
+  isolation: isolate;
 }
 
 /* Staggered Layout */
@@ -64,22 +66,28 @@
   width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border-radius: 4px; /* Sharper, more professional corners */
-  background: #000;
+  border-radius: 4px;
+  background: #0d0d0d;
   border: 1px solid var(--border-color);
+  /* Force hardware acceleration for the container */
+  transform: translateZ(0);
 }
 
 .workItemImage {
   object-fit: cover;
-  opacity: 0.4;
-  filter: grayscale(100%);
-  transform: scale(1.05);
-  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.5;
+  filter: grayscale(100%) blur(5px);
+  transform: scale(1.1);
+  transition: 
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, filter, transform;
 }
 
 .workItem:hover .workItemImage {
   opacity: 1;
-  filter: grayscale(0%);
+  filter: grayscale(0%) blur(0px);
   transform: scale(1);
 }
 
@@ -93,47 +101,60 @@
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  z-index: 2;
 }
 
 .links {
   display: flex;
   gap: 1.5rem;
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px) translateZ(0);
+  transition: 
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: auto;
+  will-change: opacity, transform;
 }
 
 .workItem:hover .links {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) translateZ(0);
 }
 
 .iconLink {
   width: 60px;
   height: 60px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 
+    background 0.3s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease;
+  /* Fix for backdrop-filter flickering */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .iconLink:hover {
-  background: var(--text-primary);
-  color: var(--bg-color);
-  transform: scale(1.1);
+  background: var(--accent);
+  color: #000;
+  transform: scale(1.1) translateZ(0);
+  border-color: var(--accent);
 }
 
 .projectInfo {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .workItem:hover .projectInfo {
@@ -154,7 +175,7 @@
   color: var(--text-primary);
 }
 
-/* Subtle Shimmer Effect on Card */
+/* Optimized Shimmer Effect */
 .workItem::after {
   content: "";
   position: absolute;
@@ -169,11 +190,13 @@
     transparent
   );
   transform: skewX(-25deg);
-  transition: 0.75s;
+  transition: transform 0.75s ease;
+  pointer-events: none;
+  z-index: 3;
 }
 
 .workItem:hover::after {
-  left: 150%;
+  transform: translateX(400%) skewX(-25deg);
 }
 
 @media (max-width: 768px) {
@@ -184,5 +207,9 @@
   
   .small {
     width: 100%;
+  }
+  
+  .workItem:hover .projectInfo {
+    transform: none;
   }
 }

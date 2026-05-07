@@ -8,9 +8,12 @@
   padding: 1.5rem 0;
   z-index: 100;
   background: var(--nav-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
+  /* Stability fixes */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .nav {
