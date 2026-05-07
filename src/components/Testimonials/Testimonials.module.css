@@ -65,9 +65,15 @@
   font-weight: 400;
 }
 
-.authorInfo {
+.footerRow {
   border-top: 1px solid var(--border-color);
   padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.authorInfo {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -84,6 +90,25 @@
   color: var(--text-secondary);
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+.githubLink {
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.githubLink:hover {
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+  transform: translateY(-3px);
 }
 
 .controls {

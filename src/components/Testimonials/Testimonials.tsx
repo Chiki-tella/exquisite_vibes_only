@@ -6,29 +6,34 @@ import styles from "./Testimonials.module.css";
 
 const testimonials = [
   {
-    text: "Christella transformed our outdated platform into a modern, lightning-fast Next.js application. Her attention to detail in the UI and understanding of complex state management is unmatched.",
-    author: "Sarah Jenkins",
-    role: "CTO, TechFlow"
+    text: "Christella has a rare ability to bridge the gap between design and development. Her implementation of complex UI patterns while maintaining design integrity is truly remarkable.",
+    author: "Amani Samuel",
+    role: "Product designer",
+    github: "https://github.com/amani-samuel"
   },
   {
-    text: "Integrating the AI features was a breeze with her expertise. She not only built the frontend but also optimized the entire ML pipeline to return results instantly.",
-    author: "David Chen",
-    role: "Founder, AI Solutions"
+    text: "Collaborating with Christella on the design system was a dream. She has a keen eye for aesthetics and a deep understanding of user behavior that brings every interface to life.",
+    author: "Sandrine Uwase",
+    role: "UI/UX Designer",
+    github: "https://github.com/sandrine-uwase"
   },
   {
-    text: "Christella is a force of nature when it comes to React architecture. She took our messy legacy code and turned it into a performant, scalable masterpiece.",
-    author: "James Wilson",
-    role: "VP Engineering, CloudScale"
+    text: "Her attention to security best practices, even in frontend development, is outstanding. She ensures every application is not just beautiful, but resilient against modern threats.",
+    author: "Berard Irakoze",
+    role: "Cybersecurity Enthusiast",
+    github: "https://github.com/berard-irakoze"
   },
   {
-    text: "The visual flair she adds to every interaction is what sets our product apart. It's not just functional; it's exquisite.",
-    author: "Elena Rodriguez",
-    role: "Design Lead, Vivid"
+    text: "As a fellow frontend developer, I'm consistently impressed by her React expertise. Her code is clean, modular, and optimized for performance across all devices.",
+    author: "Laure Ganwa",
+    role: "Frontend Developer",
+    github: "https://github.com/laure-ganwa"
   },
   {
-    text: "Working with her was the best decision we made for our startup. Fast, reliable, and deeply technical.",
-    author: "Marcus Thorne",
-    role: "Co-founder, Nexus AI"
+    text: "Working on the API integration with Christella was seamless. She understands backend logic deeply, making the communication between layers efficient and error-free.",
+    author: "Mpuhwe Nikita",
+    role: "Backend Developer",
+    github: "https://github.com/mpuhwe-nikita"
   }
 ];
 
@@ -67,9 +72,20 @@ export default function Testimonials() {
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
               <p className={styles.text}>{testimonials[index].text}</p>
-              <div className={styles.authorInfo}>
-                <h4 className={styles.author}>{testimonials[index].author}</h4>
-                <span className={styles.role}>{testimonials[index].role}</span>
+              <div className={styles.footerRow}>
+                <div className={styles.authorInfo}>
+                  <h4 className={styles.author}>{testimonials[index].author}</h4>
+                  <span className={styles.role}>{testimonials[index].role}</span>
+                </div>
+                <a 
+                  href={testimonials[index].github} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.githubLink}
+                  aria-label={`${testimonials[index].author}'s GitHub`}
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
               </div>
             </motion.div>
           </AnimatePresence>
