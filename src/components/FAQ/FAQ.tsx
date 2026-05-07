@@ -1,6 +1,54 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import styles from "./FAQ.module.css";
 
+function FAQItem({ q, a, isOpen, onClick }: { q: string, a: string, isOpen: boolean, onClick: () => void }) {
+  const [displayedText, setDisplayedText] = useState("");
+
+  useEffect(() => {
+    if (isOpen) {
+      let i = 0;
+      setDisplayedText("");
+      const interval = setInterval(() => {
+        setDisplayedText(a.slice(0, i + 1));
+        i++;
+        if (i >= a.length) clearInterval(interval);
+      }, 20); // Typing speed
+      return () => clearInterval(interval);
+    } else {
+      setDisplayedText("");
+    }
+  }, [isOpen, a]);
+
+  return (
+    <div className={`${styles.faqItem} ${isOpen ? styles.open : ""}`}>
+      <button className={styles.questionBtn} onClick={onClick}>
+        <span className={styles.question}>{q}</span>
+        <span className={styles.iconWrapper}>
+          <span className={styles.icon}>{isOpen ? "✕" : "+"}</span>
+        </span>
+      </button>
+      <div className={styles.answerContainer}>
+        <div className={styles.answerWrapper}>
+          <div className={styles.answerContent}>
+            {/* Invisible full text to reserve correct height for smooth CSS transition */}
+            <p className={styles.invisibleText} aria-hidden="true">{a}</p>
+            {/* Actually visible typing text positioned absolutely over the invisible one */}
+            <p className={styles.typingText}>
+              {isOpen ? displayedText : ""}
+              {isOpen && displayedText.length < a.length && <span className={styles.cursor}>|</span>}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function FAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   const faqs = [
     {
       q: "What is your primary tech stack?",
@@ -20,15 +68,22 @@ export default function FAQ() {
     }
   ];
 
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <section className={styles.faqSection} id="faq">
       <h2 className={styles.title}>Frequently Asked Questions</h2>
       <div className={styles.faqList}>
         {faqs.map((faq, idx) => (
-          <div key={idx} className={styles.faqItem}>
-            <h4 className={styles.question}>{faq.q}</h4>
-            <p className={styles.answer}>{faq.a}</p>
-          </div>
+          <FAQItem 
+            key={idx} 
+            q={faq.q} 
+            a={faq.a} 
+            isOpen={openIndex === idx} 
+            onClick={() => toggleFAQ(idx)} 
+          />
         ))}
       </div>
     </section>

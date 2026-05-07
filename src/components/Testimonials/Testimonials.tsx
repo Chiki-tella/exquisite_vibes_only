@@ -3,7 +3,7 @@ import styles from "./Testimonials.module.css";
 export default function Testimonials() {
   const testimonials = [
     {
-      text: "Arik transformed our outdated platform into a modern, lightning-fast Next.js application. His attention to detail in the UI and understanding of complex state management is unmatched.",
+      text: "Christella transformed our outdated platform into a modern, lightning-fast Next.js application. Her attention to detail in the UI and understanding of complex state management is unmatched.",
       author: "Sarah Jenkins",
       role: "CTO, TechFlow"
     },

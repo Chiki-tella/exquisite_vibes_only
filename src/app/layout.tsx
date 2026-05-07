@@ -14,7 +14,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Arik. | Web Designer & Developer",
+  title: "Christella. | Web Designer & Developer",
   description: "Premium web design, development, and SEO services to help your business stand out.",
 };
 

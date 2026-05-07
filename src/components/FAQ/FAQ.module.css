@@ -16,25 +16,130 @@
 .faqList {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .faqItem {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  padding: 2rem;
   border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.faqItem.open {
+  border-color: rgba(212, 188, 150, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.questionBtn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  text-align: left;
 }
 
 .question {
   font-size: 1.1rem;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
   font-weight: 500;
+  font-family: var(--font-outfit), sans-serif;
+  transition: color 0.3s ease;
 }
 
-.answer {
+.faqItem.open .question {
+  color: var(--accent);
+}
+
+.iconWrapper {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faqItem.open .icon {
+  color: var(--accent);
+  transform: rotate(90deg); /* Soft spin when changing to X */
+}
+
+/* Dropdown Animation using CSS Grid trick */
+.answerContainer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faqItem.open .answerContainer {
+  grid-template-rows: 1fr;
+}
+
+.answerWrapper {
+  overflow: hidden;
+}
+
+.answerContent {
+  position: relative;
+  padding: 0 2rem 1.5rem 2rem;
+}
+
+.invisibleText {
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.typingText {
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  right: 2rem;
   color: var(--text-secondary);
   line-height: 1.6;
   font-size: 0.95rem;
+  margin: 0;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  animation: blink 1s step-start infinite;
+  color: var(--accent);
+  margin-left: 2px;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .questionBtn {
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .answerContent {
+    padding: 0 1.5rem 1.25rem 1.5rem;
+  }
+  
+  .typingText {
+    left: 1.5rem;
+    right: 1.5rem;
+  }
 }

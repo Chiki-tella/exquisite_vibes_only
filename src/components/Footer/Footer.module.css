@@ -95,18 +95,19 @@
 }
 
 .massiveText {
-  font-size: 28vw;
-  line-height: 0.8;
-  font-family: var(--font-playfair), serif;
-  font-style: italic;
-  font-weight: 700;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 100%);
+  font-size: 18vw;
+  line-height: 0.75;
+  font-family: var(--font-outfit), sans-serif;
+  font-weight: 800;
+  background: linear-gradient(180deg, rgba(30, 30, 30, 1) 0%, #000000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-transform: lowercase;
+  text-transform: uppercase;
   margin: 0;
   padding: 0;
   user-select: none;
+  letter-spacing: -0.02em;
+  filter: drop-shadow(0px -1px 1px rgba(255, 255, 255, 0.05)) drop-shadow(0px 10px 20px rgba(0,0,0,0.8));
 }
 
 @media (max-width: 768px) {

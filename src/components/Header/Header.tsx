@@ -13,7 +13,7 @@ export default function Header() {
       <header className={styles.header}>
         <div className={styles.nav}>
           <Link href="/" className={styles.logo}>
-            arik.
+            christella.
           </Link>
           <nav className={styles.navLinks}>
             <Link href="#services">SERVICES</Link>
