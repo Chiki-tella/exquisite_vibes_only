@@ -1,0 +1,40 @@
+.faqSection {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 8rem;
+  padding: 0 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-family: var(--font-playfair), serif;
+  font-style: italic;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.faqItem {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  border-radius: 4px;
+}
+
+.question {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.answer {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
