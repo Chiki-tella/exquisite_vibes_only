@@ -7,6 +7,7 @@ import Process from "@/components/Process/Process";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import FAQ from "@/components/FAQ/FAQ";
 import Footer from "@/components/Footer/Footer";
+import CTA from "@/components/CTA/CTA";
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
         <ScrollReveal><Process /></ScrollReveal>
         <ScrollReveal><Work /></ScrollReveal>
         <ScrollReveal><Testimonials /></ScrollReveal>
+        <ScrollReveal><CTA /></ScrollReveal>
         <ScrollReveal><FAQ /></ScrollReveal>
         
       </main>

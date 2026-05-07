@@ -26,20 +26,26 @@ export default function Process() {
 
   return (
     <section className={styles.processSection} id="process">
-      <h2 className={styles.title}>My Process</h2>
-      <div className={styles.timeline}>
-        {steps.map((step, idx) => (
-          <div key={idx} className={styles.step}>
-            <div className={styles.numberWrapper}>
-              <span className={styles.number}>{step.number}</span>
-              {idx !== steps.length - 1 && <div className={styles.line}></div>}
+      <div className={styles.headerWrapper}>
+        <span className={styles.preTitle}>HOW I WORK</span>
+        <h2 className={styles.title}>The <i>Exquisite</i> Flow.</h2>
+      </div>
+      
+      <div className={styles.timelineContainer}>
+        <div className={styles.centralLine}></div>
+        
+        <div className={styles.stepsWrapper}>
+          {steps.map((step, idx) => (
+            <div key={idx} className={`${styles.stepCard} ${idx % 2 === 0 ? styles.left : styles.right}`}>
+              <div className={styles.stepNumber}>{step.number}</div>
+              <div className={styles.stepContent}>
+                <h3 className={styles.stepTitle}>{step.title}</h3>
+                <p className={styles.stepDesc}>{step.description}</p>
+              </div>
+              <div className={styles.dot}></div>
             </div>
-            <div className={styles.content}>
-              <h3 className={styles.stepTitle}>{step.title}</h3>
-              <p className={styles.stepDesc}>{step.description}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

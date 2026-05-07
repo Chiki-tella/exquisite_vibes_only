@@ -1,0 +1,109 @@
+.ctaSection {
+  width: 100%;
+  padding: 10rem 2rem;
+  background: var(--bg-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  max-width: 700px;
+}
+
+.preTitle {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.title {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-family: var(--font-heading), sans-serif;
+  line-height: 1;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+.title i {
+  font-family: var(--font-body), serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 500px;
+}
+
+.buttonWrapper {
+  display: flex;
+}
+
+.mainButton {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 1.25rem 2.5rem;
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.mainButton:hover {
+  background: var(--text-primary);
+  color: var(--bg-color);
+  border-color: var(--text-primary);
+  transform: translateY(-5px);
+}
+
+.mainButton svg {
+  transition: transform 0.4s ease;
+}
+
+.mainButton:hover svg {
+  transform: translateX(5px);
+}
+
+.backgroundText {
+  position: absolute;
+  right: -5%;
+  bottom: -10%;
+  font-size: 20vw;
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .ctaSection {
+    padding: 6rem 2rem;
+  }
+  
+  .title {
+    font-size: 3rem;
+  }
+}

@@ -1,102 +1,188 @@
 .workSection {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto 8rem;
+  max-width: 1400px;
+  margin: 0 auto 10rem;
   padding: 0 2rem;
 }
 
-.workHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 3rem;
+.headerWrapper {
+  text-align: center;
+  margin-bottom: 6rem;
 }
 
-.workTitle {
-  font-size: 2.5rem;
+.preTitle {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-family: var(--font-heading), sans-serif;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.title i {
+  font-family: var(--font-body), serif;
   font-style: italic;
-}
-
-.seeAllBtn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-secondary);
-  background: transparent;
-  transition: color 0.3s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.seeAllBtn:hover {
+  font-weight: 400;
   color: var(--accent);
 }
 
 .workGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .workItem {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   position: relative;
-  border-radius: 4px;
+}
+
+/* Staggered Layout */
+.small {
+  width: 85%;
+}
+
+.workItem:nth-child(even).small {
+  align-self: flex-end;
+}
+
+.workItem:nth-child(odd).small {
+  align-self: flex-start;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: var(--card-bg);
+  border-radius: 4px; /* Sharper, more professional corners */
+  background: #000;
   border: 1px solid var(--border-color);
-  transition: all 0.5s ease;
-  aspect-ratio: 4/3;
 }
 
 .workItemImage {
   object-fit: cover;
-  transition: transform 0.7s ease;
-  opacity: 0.8;
+  opacity: 0.4;
+  filter: grayscale(100%);
+  transform: scale(1.05);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .workItem:hover .workItemImage {
-  transform: scale(1.05);
   opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1);
 }
 
-.workItemOverlay {
+.overlay {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
-  padding: 2rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+  height: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s ease;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
 }
 
-.workItem:hover .workItemOverlay {
+.links {
+  display: flex;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+}
+
+.workItem:hover .links {
   opacity: 1;
   transform: translateY(0);
 }
 
-.workCategory {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
+.iconLink {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.workName {
+.iconLink:hover {
+  background: var(--text-primary);
+  color: var(--bg-color);
+  transform: scale(1.1);
+}
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: transform 0.4s ease;
+}
+
+.workItem:hover .projectInfo {
+  transform: translateX(10px);
+}
+
+.projectCategory {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.projectTitle {
+  font-size: 1.75rem;
   font-family: var(--font-heading), sans-serif;
-  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+/* Subtle Shimmer Effect on Card */
+.workItem::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.03),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: 0.75s;
+}
+
+.workItem:hover::after {
+  left: 150%;
 }
 
 @media (max-width: 768px) {
   .workGrid {
     grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .small {
+    width: 100%;
   }
 }

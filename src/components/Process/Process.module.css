@@ -1,85 +1,165 @@
 .processSection {
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto 8rem;
+  max-width: 1200px;
+  margin: 0 auto 10rem;
   padding: 0 2rem;
-}
-
-.title {
-  font-size: 2.5rem;
-  font-family: var(--font-heading), sans-serif;
-  margin-bottom: 4rem;
-  text-align: center;
-}
-
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.step {
-  display: flex;
-  gap: 2rem;
   position: relative;
 }
 
-.numberWrapper {
+.headerWrapper {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.preTitle {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-family: var(--font-heading), sans-serif;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.title i {
+  font-family: var(--font-body), serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.timelineContainer {
+  position: relative;
+  width: 100%;
+}
+
+.centralLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    var(--border-color) 15%, 
+    var(--border-color) 85%, 
+    transparent 100%
+  );
+  transform: translateX(-50%);
+}
+
+.stepsWrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 4rem;
 }
 
-.number {
-  font-size: 1.25rem;
-  font-weight: 700;
-  font-family: var(--font-heading), sans-serif;
-  color: var(--accent);
-  background: var(--bg-color);
-  border: 1px solid var(--accent);
-  width: 50px;
-  height: 50px;
+.stepCard {
+  width: 45%;
+  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.stepCard.left {
+  align-self: flex-start;
+  text-align: right;
+  align-items: flex-end;
+}
+
+.stepCard.right {
+  align-self: flex-end;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.dot {
+  position: absolute;
+  top: 2rem;
+  width: 12px;
+  height: 12px;
+  background: var(--bg-color);
+  border: 2px solid var(--accent);
   border-radius: 50%;
   z-index: 2;
+  box-shadow: 0 0 10px rgba(212, 188, 150, 0.5);
 }
 
-.line {
-  width: 1px;
-  height: 100%;
-  background: var(--border-color);
-  min-height: 80px;
-  flex-grow: 1;
+.left .dot {
+  right: calc(-5% - 6px - 2.5vw);
 }
 
-.content {
-  padding-bottom: 4rem;
-  padding-top: 0.5rem;
+.right .dot {
+  left: calc(-5% - 6px - 2.5vw);
+}
+
+.stepNumber {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.03);
+  line-height: 1;
+  margin-bottom: -2rem;
+  pointer-events: none;
+}
+
+.stepContent {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  padding: 2.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  width: 100%;
+}
+
+.stepCard:hover .stepContent {
+  border-color: rgba(212, 188, 150, 0.3);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .stepTitle {
   font-size: 1.5rem;
+  font-family: var(--font-heading), sans-serif;
   color: var(--text-primary);
   margin-bottom: 1rem;
-  font-family: var(--font-heading), sans-serif;
 }
 
 .stepDesc {
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 1rem;
-  max-width: 500px;
 }
 
 @media (max-width: 768px) {
-  .step {
-    gap: 1.5rem;
+  .centralLine {
+    left: 20px;
   }
-  .number {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
+  
+  .stepCard {
+    width: calc(100% - 60px);
+    align-self: flex-end !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+  
+  .left .dot, .right .dot {
+    left: -46px;
+    right: auto;
+  }
+  
+  .stepNumber {
+    font-size: 3rem;
+  }
+  
+  .stepContent {
+    padding: 2rem;
   }
 }
