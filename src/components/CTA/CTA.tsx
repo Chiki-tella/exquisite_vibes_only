@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import styles from "./CTA.module.css";
 import ContactModal from "../ContactModal/ContactModal";
 
@@ -24,7 +25,17 @@ export default function CTA() {
               </button>
             </div>
           </div>
-          
+
+          <div className={styles.imageWrapper}>
+            <Image
+              src="/chiki.png"
+              alt="Portrait"
+              width={400}
+              height={500}
+              className={styles.ctaImage}
+              priority
+            />
+          </div>
         </div>
       </section>
 
