@@ -64,6 +64,12 @@
   width: 100%;
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .ctaButton {
   background: transparent;
   color: var(--text-primary);

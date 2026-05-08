@@ -1,5 +1,20 @@
 :root {
   --font-body: 'Libre Baskerville', serif;
+  
+  /* LIGHT MODE (Premium Aesthetic) */
+  --bg-color: #F9F7F2;      /* Warm Gallery Cream */
+  --text-primary: #1A1A1A;  /* Soft Charcoal */
+  --text-secondary: #555555;
+  --accent: #B08D57;        /* Muted Gold */
+  --nav-bg: rgba(249, 247, 242, 0.85);
+  --card-bg: rgba(0, 0, 0, 0.03);
+  --border-color: rgba(0, 0, 0, 0.08);
+  --imprinted-text: rgba(0, 0, 0, 0.05);
+  
+  color-scheme: light dark;
+}
+
+[data-theme='dark'] {
   --bg-color: #070707;
   --text-primary: #e6d8c0;
   --text-secondary: #888888;
@@ -7,6 +22,7 @@
   --nav-bg: rgba(10, 10, 10, 0.8);
   --card-bg: rgba(255, 255, 255, 0.02);
   --border-color: rgba(255, 255, 255, 0.05);
+  --imprinted-text: rgba(255, 255, 255, 0.03);
 }
 
 * {

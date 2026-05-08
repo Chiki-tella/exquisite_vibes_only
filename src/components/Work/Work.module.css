@@ -67,7 +67,7 @@
   aspect-ratio: 16 / 10;
   overflow: hidden;
   border-radius: 4px;
-  background: #0d0d0d;
+  background: var(--card-bg);
   border: 1px solid var(--border-color);
   /* Force hardware acceleration for the container */
   transform: translateZ(0);
@@ -124,15 +124,15 @@
 .iconLink {
   padding: 0 1rem;
   height: 40px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
+  background: var(--card-bg);
+  color: var(--text-primary);
   border-radius: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
   cursor: pointer;
   transition: 
     background 0.3s ease,
@@ -154,7 +154,7 @@
 
 .iconLink:hover {
   background: var(--accent);
-  color: #000;
+  color: var(--bg-color);
   transform: scale(1.05) translateZ(0);
   border-color: var(--accent);
 }

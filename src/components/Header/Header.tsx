@@ -5,6 +5,8 @@ import { useState } from "react";
 import styles from "./Header.module.css";
 import ContactModal from "../ContactModal/ContactModal";
 
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
+
 export default function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -21,15 +23,19 @@ export default function Header() {
             <Link href="#work">WORK</Link>
             <Link href="#faq">FAQ</Link>
           </nav>
-          <button className={styles.ctaButton} onClick={() => setIsModalOpen(true)}>
-            <span className={styles.ctaText}>LET'S TALK</span>
-            <span className={styles.ctaIcon}>
-              <svg suppressHydrationWarning width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </span>
-          </button>
+          
+          <div className={styles.actions}>
+            <ThemeToggle />
+            <button className={styles.ctaButton} onClick={() => setIsModalOpen(true)}>
+              <span className={styles.ctaText}>LET'S TALK</span>
+              <span className={styles.ctaIcon}>
+                <svg suppressHydrationWarning width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </button>
+          </div>
         </div>
       </header>
 

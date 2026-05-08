@@ -111,7 +111,7 @@
   font-family: var(--font-heading), sans-serif;
   font-weight: 900;
   letter-spacing: -0.05em;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+  background: linear-gradient(180deg, var(--imprinted-text) 0%, transparent 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

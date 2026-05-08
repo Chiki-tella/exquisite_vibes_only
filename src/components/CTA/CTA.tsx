@@ -34,6 +34,7 @@ export default function CTA() {
               height={500}
               className={styles.ctaImage}
               priority
+              suppressHydrationWarning
             />
           </div>
         </div>
