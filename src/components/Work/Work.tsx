@@ -56,18 +56,18 @@ export default function Work() {
           {projects.map((project, idx) => (
             <div key={idx} className={`${styles.workItem} ${styles[project.size]}`}>
               <div className={styles.imageContainer}>
-                <Image 
+                <Image
                   suppressHydrationWarning
-                  src={project.image} 
-                  alt={project.title} 
-                  fill 
+                  src={project.image}
+                  alt={project.title}
+                  fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
-                  className={styles.workItemImage} 
+                  className={styles.workItemImage}
                 />
                 <div className={styles.overlay}>
                   <div className={styles.links}>
-                    <button 
-                      className={styles.iconLink} 
+                    <button
+                      className={styles.iconLink}
                       onClick={() => setSelectedProject(project)}
                       title="View Details"
                     >
@@ -96,9 +96,9 @@ export default function Work() {
         </div>
       </section>
 
-      <ProjectModal 
-        project={selectedProject} 
-        onClose={() => setSelectedProject(null)} 
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
       />
     </>
   );
